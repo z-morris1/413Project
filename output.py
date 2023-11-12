@@ -1,16 +1,18 @@
 import os
 
-# Create testcasesAI directory if it does not exist
+# Create testcasesAI directory
 directory = "testcasesAI"
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-# Define an array of strings
-strings = ["\"String 1\"", "String 2", "String 3", "String 4"]  # Replace with your actual strings
+# Temporary array of strings. Should be replaced by array of test cases 
+strings = ["\"String 1\"", "String 2", "String 3", "String 4"]  
 
-# For each string, create a new .txt file and write the string to the file
+# Iterate through strings array and outputs each line into a text file
 for i, s in enumerate(strings):
     with open(os.path.join(directory, f'test{i}.txt'), 'w') as f:
         f.write(s)
+# Gets the current directory
 cwd = os.getcwd()
+# Outputs the current directory for the user to paste into AFL++
 print(cwd + "/testcasesAI")
