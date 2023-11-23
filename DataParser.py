@@ -38,11 +38,11 @@ for choice in choices:
         substrings.append(pair[substring_start:substring_end])
 
     # Printing the extracted input strings and substrings
-    """
+    
     for i, (input_str, substring) in enumerate(zip(input_strings, substrings)):
         print(f"Example {i + 1}:")
         print(f"Input String: {input_str}")
         print(f"Substring: {substring}")
         print()
-    """
+    
     ##uncomment to print list
