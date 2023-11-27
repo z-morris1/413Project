@@ -1,0 +1,12 @@
+def check_substring(input_string, substring):
+    if substring in input_string:
+        print(f"'{substring}' is found in the input string.")
+    else:
+        print(f"'{substring}' is not found in the input string.")
+
+if name == "main":
+    input_string = input("Enter a string: ")
+    substring = input("Enter a substring to check for: ")
+
+    check_substring(input_string, substring)
+generate a list of 3 test inputs with no other test for this code to check if it works, make sure to test edge cases, when listing the tests: start every input with string:, substring: and incase them with " without saying anything about the output
