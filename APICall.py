@@ -1,5 +1,6 @@
 import requests
 import shutil
+import os
 
 #Josh Podlich
 fileName = input('Enter the name of the file the code is in\n')
@@ -61,8 +62,23 @@ for choice in choices:
             content.remove(substr)
     if "']" in content:
         content.remove("']")
-    
-    print(content)
 
-    
+# Richard Bach
 
+pairs = zip(content[0::2], content[1::2])
+
+content = [s1 + " " + s2 for s1, s2 in pairs]
+
+# Create testcasesAI directory
+directory = "testcasesAI"
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
+# Iterate through strings array and outputs each line into a text file
+for i, s in enumerate(content):
+    with open(os.path.join(directory, f'test{i}.txt'), 'w') as f:
+        f.write(s)
+# Gets the current directory
+cwd = os.getcwd()
+# Outputs the current directory for the user to paste into AFL++
+print(cwd + "/testcasesAI")
