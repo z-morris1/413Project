@@ -9,4 +9,10 @@ if name == "main":
     substring = input("Enter a substring to check for: ")
 
     check_substring(input_string, substring)
-generate a list of 3 test inputs with no other test for this code to check if it works, make sure to test edge cases, when listing the tests: start every input with string:, substring: and incase them with " without saying anything about the output
+generate a list of 3 test inputs with no other test for this code to check if it works, make sure to test edge cases, when listing the tests: start every input and incase them with " without saying anything about the output in this format 'Input: 
+parameter1: value1 
+parameter2: value2
+
+Input: 
+parameter1: value1 
+parameter2: value2'.  If the test case value is a string, surround it in . Do not include any text or descriptions aside from the test cases.
