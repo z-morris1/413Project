@@ -19,7 +19,7 @@ void concatenateStrings(char *str1, char *str2, char *result) {
 }
 #define SIZE 100
 int main() {
-    char *input[SIZE] = {0}
+    char input[SIZE][100] = {0};
     ssize_t length;
     length = read(STDIN_FILENO, input, SIZE);
 
