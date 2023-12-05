@@ -1,14 +1,35 @@
-def check_substring(input_string, substring):
-    if substring in input_string:
-        print(f"'{substring}' is found in the input string.")
-    else:
-        print(f"'{substring}' is not found in the input string.")
+#include <stdio.h>
+#include <string.h>
 
-if name == "main":
-    input_string = input("Enter a string: ")
-    substring = input("Enter a substring to check for: ")
+int isSubstring(char string, charsubstring) {
+    int stringLength = strlen(string);
+    int subLength = strlen(substring);
 
-    check_substring(input_string, substring)
+    for (int i = 0; i <= stringLength - subLength; i++) {
+        int j;
+
+        for (j = 0; j < subLength; j++)
+            if (string[i + j] != substring[j])
+                break;
+
+        if (j == subLength)
+            return 1; // Substring found
+    }
+
+    return 0; // Substring not found
+}
+
+int main() {
+    char string[] = "This is a sample string";
+    char substring[] = "sample";
+
+    if (isSubstring(string, substring))
+        printf("'%s' is a substring of '%s'\n", substring, string);
+    else
+        printf("'%s' is not a substring of '%s'\n", substring, string);
+
+    return 0;
+}
 generate a list of 3 test inputs with no other test for this code to check if it works, make sure to test edge cases, when listing the tests: start every input and incase them with " without saying anything about the output in this format 'Input: 
 parameter1: value1 
 parameter2: value2
