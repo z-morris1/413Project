@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+void concatenateStrings(char *str1, char *str2, char *result) {
+    int length1 = strlen(str1);
+    int length2 = strlen(str2);
+
+    // Copy str1 to result
+    strcpy(result, str1);
+
+    // Append str2 to result
+    strcpy(result + length1, str2);
+}
+#define SIZE 100
+int main() {
+    char *input[SIZE] = {0}
+    ssize_t length;
+    length = read(STDIN_FILENO, input, SIZE);
+
+    char string1[100];
+    char string2[100];
+    char result[200]; // Make sure this is large enough to hold the concatenated string
+
+    sscanf(input, "%s %s", string1, string2);
+    
+    concatenateStrings(string1, string2, result);
+
+    printf("Concatenated string: %s\n", result);
+
+    return 0;
+}
