@@ -1,32 +1,37 @@
+#include <assert.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <sys/types.h>
+#include <unistd.h>
 
-int isSubstring(char string, charsubstring) {
-    int stringLength = strlen(string);
-    int subLength = strlen(substring);
+void concatenateStrings(char *str1, char *str2, char *result) {
+    int length1 = strlen(str1);
+    int length2 = strlen(str2);
 
-    for (int i = 0; i <= stringLength - subLength; i++) {
-        int j;
+    // Copy str1 to result
+    strcpy(result, str1);
 
-        for (j = 0; j < subLength; j++)
-            if (string[i + j] != substring[j])
-                break;
-
-        if (j == subLength)
-            return 1; // Substring found
-    }
-
-    return 0; // Substring not found
+    // Append str2 to result
+    strcpy(result + length1, str2);
 }
-
+#define SIZE 100
 int main() {
-    char string[] = "This is a sample string";
-    char substring[] = "sample";
+    char input[SIZE][100] = {0};
+    ssize_t length;
+    length = read(STDIN_FILENO, input, SIZE);
 
-    if (isSubstring(string, substring))
-        printf("'%s' is a substring of '%s'\n", substring, string);
-    else
-        printf("'%s' is not a substring of '%s'\n", substring, string);
+    char string1[100];
+    char string2[100];
+    char result[200]; // Make sure this is large enough to hold the concatenated string
+
+    sscanf(input[0], "%s", string1);
+    sscanf(input[1], "%s", string2);
+    concatenateStrings(string1, string2, result);
+
+    printf("Concatenated string: %s\n", result);
 
     return 0;
 }
