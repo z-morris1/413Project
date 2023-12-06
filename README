@@ -1,0 +1,27 @@
+# Install AFL++ Docker Environment 
+#  docker pull aflplusplus/aflplusplus
+# Start AFL++ Container 
+#  docker run -ti -v /location/of/your/target:/src aflplusplus/aflplusplus
+# Install requests library 
+# pip3 install requests
+# Clone companion program from Github 
+#  git clone https://github.com/z-morris1/413Project.git
+# Navigate to 413Project directory 
+#  cd 413Project/
+# Generate a text file within the directory containing the source code you wish to test. Ensure that the test file’s main function has a driver written for it compatible with AFL++.  The file “prompt2.txt” is an example of the correct format.
+# Run the companion program 
+#  python3 APICall.py
+# Enter the file name of the text file created in step 5 
+#  prompt2.txt
+# Enter the number of seeds you wish to generate (3 is recommended, but you can put any number here) 
+#  3 
+# Verify that the test seeds were generated 
+#  ls testcasesAI/
+# Convert text file from step 5 to a c file to be compiled by afl-gcc 
+#  mv prompt2.txt prompt2.c
+#  Exit the current directory 
+# cd ..
+# Compile program to be fuzzed
+# afl-gcc ./413Project/prompt2.c -o ./prompt2
+# Run fuzzer
+# afl-fuzz -i ./413Project/testcasesAI -o  /src/findings – ./prompt2 @@ 
