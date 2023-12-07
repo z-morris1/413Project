@@ -20,8 +20,15 @@ int isSubstring(char string, charsubstring) {
 }
 
 int main() {
-    char string[] = "This is a sample string";
-    char substring[] = "sample";
+    char input[SIZE][100] = {0};
+    ssize_t length;
+    length = read(STDIN_FILENO, input, SIZE);
+
+    char string[100];
+    char substring[100];
+
+    sscanf(input[0], "%s", string);
+    sscanf(input[1], "%s", substring);
 
     if (isSubstring(string, substring))
         printf("'%s' is a substring of '%s'\n", substring, string);
