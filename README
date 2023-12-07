@@ -1,3 +1,4 @@
+#ANY REFERENCE TO prompt2.txt ALSO WORKS ON prompt1.txt
 #Running Application:
 #Install AFL++ Docker Environment 
 # - docker pull aflplusplus/aflplusplus
