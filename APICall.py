@@ -32,7 +32,7 @@ def send_prompt_to_chatgpt(prompt, api_key):
         return {"error": response.text}
 
 # Replace 'your_api_key_here' with your actual OpenAI API key
-api_key = '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'
+api_key = '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'
 prompt = ""
 with open("prompt.txt", 'r') as file:
     for line in file:
