@@ -15,8 +15,7 @@
 #Generate a text file within the directory containing the source code you wish to test. Ensure that the test file’s main function has a driver written for it compatible with AFL++.  The file “prompt2.txt” is an example of the correct format.
 #Insert a valid ChatGPT API key into APICall.py line 35
 # - nano APICall.py
-# - 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
-# - If the key is not working, choose another key in backupAPIkeys.txt
+# - because APi keys will be disabled on Github, please read and take API keys in design document
 #Run the companion program 
 # - python3 APICall.py
 #Enter the file name of the text file created in step 5 
